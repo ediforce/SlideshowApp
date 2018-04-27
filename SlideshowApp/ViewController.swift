@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     //イメージビューアーを接続
@@ -25,6 +26,9 @@ class ViewController: UIViewController {
     
     var timer : Timer!
     var timer_sec : Double = 0.0
+    //タイマー関連
+    
+    var audioPlayer: AVAudioPlayer!
 
     
     func viewImage() {
@@ -38,7 +42,16 @@ class ViewController: UIViewController {
         
         imageView.image = UIImage(named: "image1.jpg")
         //1枚目の画像を表示しとく
+        do {
+            let filePath = Bundle.main.path(forResource: "n99", ofType: "mp3")
+            let musicPath = URL(fileURLWithPath: filePath!)
+            audioPlayer = try AVAudioPlayer(contentsOf: musicPath)
+            
+        } catch {
+            print("error")
         
+        }
+
         
     }
     @IBAction func goFoward(_ sender: Any?) {
@@ -66,13 +79,15 @@ class ViewController: UIViewController {
             self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(goFoward), userInfo: nil, repeats: true)
             goFowardBtn.isEnabled = false
             goBackBtn.isEnabled = false
-            
+            audioPlayer.play()
         } else {
             self.timer.invalidate()
             self.timer = nil
             goFowardBtn.isEnabled = true
             goBackBtn.isEnabled = true
+            audioPlayer.pause()
         }
+        
     }
     
     

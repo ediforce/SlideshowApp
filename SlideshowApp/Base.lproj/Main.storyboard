@@ -29,52 +29,44 @@
                                     <outletCollection property="gestureRecognizers" destination="qoY-bO-eeb" appends="YES" id="etf-yo-ZvA"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsC-XT-zqF">
-                                <rect key="frame" x="64.5" y="432" width="65" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="6KI-Kl-eIV"/>
-                                    <constraint firstAttribute="width" constant="65" id="th7-kg-E4v"/>
-                                </constraints>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <action selector="goBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5t4-3E-Lzg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-TS-TzG">
-                                <rect key="frame" x="245.5" y="432" width="60" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="S54-3T-Jed"/>
-                                    <constraint firstAttribute="width" constant="60" id="yUD-O8-2R2"/>
-                                </constraints>
-                                <state key="normal" title="進む"/>
-                                <connections>
-                                    <action selector="goFoward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xvF-m4-E1c"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnV-GL-Jvf">
-                                <rect key="frame" x="154.5" y="432" width="66" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="8kx-vM-CK4"/>
-                                    <constraint firstAttribute="width" constant="66" id="s3a-gd-xti"/>
-                                </constraints>
-                                <state key="normal" title="再生/停止"/>
-                                <connections>
-                                    <action selector="Play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="02N-Hx-Yp0"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOZ-za-4Oo">
+                                <rect key="frame" x="110" y="398" width="155" height="32"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnV-GL-Jvf">
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="32"/>
+                                        <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="20"/>
+                                        <state key="normal" title="▷   "/>
+                                        <connections>
+                                            <action selector="Play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="02N-Hx-Yp0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsC-XT-zqF">
+                                        <rect key="frame" x="35" y="0.0" width="60" height="32"/>
+                                        <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="20"/>
+                                        <state key="normal" title="＜＜　"/>
+                                        <connections>
+                                            <action selector="goBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5t4-3E-Lzg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-TS-TzG">
+                                        <rect key="frame" x="95" y="0.0" width="60" height="32"/>
+                                        <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="20"/>
+                                        <state key="normal" title="＞＞　"/>
+                                        <connections>
+                                            <action selector="goFoward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xvF-m4-E1c"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QnV-GL-Jvf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9gh-K8-15h"/>
-                            <constraint firstItem="QnV-GL-Jvf" firstAttribute="leading" secondItem="WsC-XT-zqF" secondAttribute="trailing" constant="25" id="ENg-8G-PMU"/>
                             <constraint firstItem="Hen-SW-UM1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Ff2-i0-beh"/>
-                            <constraint firstItem="QnV-GL-Jvf" firstAttribute="top" secondItem="Hen-SW-UM1" secondAttribute="bottom" constant="60" id="Opm-16-GGZ"/>
                             <constraint firstItem="Hen-SW-UM1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="S64-rP-fP8"/>
                             <constraint firstItem="Hen-SW-UM1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YXu-my-UC6"/>
-                            <constraint firstItem="Rhr-TS-TzG" firstAttribute="top" secondItem="Hen-SW-UM1" secondAttribute="bottom" constant="60" id="ZcY-Pb-hR2"/>
+                            <constraint firstItem="gOZ-za-4Oo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ycp-P2-ah5"/>
+                            <constraint firstItem="gOZ-za-4Oo" firstAttribute="top" secondItem="Hen-SW-UM1" secondAttribute="bottom" constant="26" id="f7a-sp-gqh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hen-SW-UM1" secondAttribute="trailing" constant="50" id="pX2-Mo-jsq"/>
-                            <constraint firstItem="Rhr-TS-TzG" firstAttribute="leading" secondItem="QnV-GL-Jvf" secondAttribute="trailing" constant="25" id="q8G-wo-tQI"/>
-                            <constraint firstItem="WsC-XT-zqF" firstAttribute="top" secondItem="Hen-SW-UM1" secondAttribute="bottom" constant="60" id="y9M-uJ-fGO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
