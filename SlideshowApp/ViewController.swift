@@ -20,6 +20,10 @@ class ViewController: UIViewController {
     var imageArray = ["image1.jpg", "image2.jpg", "image3.jpg"]
     //画像を宣言
     
+    var timer : Timer!
+    var timer_sec : Double = 0.0
+
+    
     func viewImage() {
         let myImage = UIImage(named: imageArray[imageCount])!
         imageView.image = myImage
@@ -35,41 +39,35 @@ class ViewController: UIViewController {
         
     }
     @IBAction func goFoward(_ sender: Any?) {
+        //進むボタン
         imageCount += 1
         if imageCount >= 3 {
             imageCount = 0
         }
         viewImage()
-//        //以下進むボタン
-//        if imageView.image == UIImage(named: "image1.jpg") {
-//
-//        imageView.image = UIImage(named: "image2.jpg")
-//
-//        } else if imageView.image == UIImage(named: "image2.jpg") {
-//            imageView.image = UIImage(named: "image3.jpg")
-//        } else {
-//            imageView.image = UIImage(named: "image1.jpg")
-//        }
+
     }
     
     @IBAction func goBack(_ sender: Any) {
+        //戻るボタン。　配列は０からカウントが始まるので注意！
         imageCount -= 1
         if imageCount < 0 {
             imageCount = 2
         }
         viewImage()
-    //以下戻るボタン
-//    if imageView.image == UIImage(named: "image3.jpg") {
-//
-//    imageView.image = UIImage(named: "image2.jpg")
-//
-//    } else if imageView.image == UIImage(named: "image2.jpg") {
-//    imageView.image = UIImage(named: "image1.jpg")
-//    } else {
-//    imageView.image = UIImage(named: "image3.jpg")
-//    }
-        
+
     }
+    
+    @IBAction func Play(_ sender: Any) {
+        if timer == nil {
+            self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(goFoward), userInfo: nil, repeats: true)
+        } else {
+            self.timer.invalidate()
+            self.timer = nil
+        }
+    }
+    
+    
     
     @IBAction func onTapImage(_ sender: Any) {
         performSegue(withIdentifier: "result", sender: nil)
@@ -88,8 +86,10 @@ class ViewController: UIViewController {
     
     
     @IBAction func unwind(_ segue: UIStoryboardSegue){
-        //なにやら戻ってくるために必要なものらしい
+        //戻ってくるために必要
     }
+    
+    
     
     
     override func didReceiveMemoryWarning() {
