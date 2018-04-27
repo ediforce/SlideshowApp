@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,62 +19,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hen-SW-UM1">
-                                <rect key="frame" x="70" y="122" width="235" height="167"/>
+                                <rect key="frame" x="50" y="70" width="275" height="302"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Hen-SW-UM1" secondAttribute="height" multiplier="235:167" id="HKI-Hi-lg3"/>
-                                    <constraint firstAttribute="height" constant="167" id="cod-cF-Mh8"/>
-                                    <constraint firstAttribute="width" constant="235" id="x2J-HQ-iYd"/>
+                                    <constraint firstAttribute="height" constant="302" id="6eL-Vk-lwX"/>
+                                    <constraint firstAttribute="width" constant="275" id="oW4-Nw-3J2"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="qoY-bO-eeb" appends="YES" id="etf-yo-ZvA"/>
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsC-XT-zqF">
-                                <rect key="frame" x="116" y="355" width="31" height="30"/>
+                                <rect key="frame" x="64.5" y="432" width="65" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="AVN-uy-hfg"/>
-                                    <constraint firstAttribute="width" constant="31" id="liv-v8-pse"/>
+                                    <constraint firstAttribute="height" constant="30" id="6KI-Kl-eIV"/>
+                                    <constraint firstAttribute="width" constant="65" id="th7-kg-E4v"/>
                                 </constraints>
                                 <state key="normal" title="戻る"/>
                                 <connections>
                                     <action selector="goBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5t4-3E-Lzg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnV-GL-Jvf">
-                                <rect key="frame" x="154" y="406" width="66" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="66" id="RcO-Ee-zAf"/>
-                                    <constraint firstAttribute="width" constant="66" id="pbh-bd-13W"/>
-                                </constraints>
-                                <state key="normal" title="再生/停止"/>
-                                <connections>
-                                    <action selector="Play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="02N-Hx-Yp0"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-TS-TzG">
-                                <rect key="frame" x="228" y="355" width="31" height="30"/>
+                                <rect key="frame" x="245.5" y="432" width="60" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="R7D-xF-syF"/>
-                                    <constraint firstAttribute="width" constant="31" id="g65-0K-BIP"/>
+                                    <constraint firstAttribute="height" constant="30" id="S54-3T-Jed"/>
+                                    <constraint firstAttribute="width" constant="60" id="yUD-O8-2R2"/>
                                 </constraints>
                                 <state key="normal" title="進む"/>
                                 <connections>
                                     <action selector="goFoward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xvF-m4-E1c"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnV-GL-Jvf">
+                                <rect key="frame" x="154.5" y="432" width="66" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8kx-vM-CK4"/>
+                                    <constraint firstAttribute="width" constant="66" id="s3a-gd-xti"/>
+                                </constraints>
+                                <state key="normal" title="再生/停止"/>
+                                <connections>
+                                    <action selector="Play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="02N-Hx-Yp0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Hen-SW-UM1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="102" id="58V-5e-Oor"/>
-                            <constraint firstItem="QnV-GL-Jvf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9CP-oc-GfI"/>
-                            <constraint firstItem="Rhr-TS-TzG" firstAttribute="top" secondItem="Hen-SW-UM1" secondAttribute="bottom" constant="66" id="9Hw-Bk-PTV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rhr-TS-TzG" secondAttribute="trailing" constant="116" id="HyN-7O-MnQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QnV-GL-Jvf" secondAttribute="bottom" constant="231" id="Rdn-Xs-HLs"/>
-                            <constraint firstItem="Hen-SW-UM1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ThZ-e3-5g1"/>
-                            <constraint firstItem="QnV-GL-Jvf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iag-Aw-AtN"/>
-                            <constraint firstItem="WsC-XT-zqF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="116" id="sTK-Uq-wXX"/>
-                            <constraint firstItem="WsC-XT-zqF" firstAttribute="top" secondItem="Hen-SW-UM1" secondAttribute="bottom" constant="66" id="v9w-3v-XtW"/>
+                            <constraint firstItem="QnV-GL-Jvf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9gh-K8-15h"/>
+                            <constraint firstItem="QnV-GL-Jvf" firstAttribute="leading" secondItem="WsC-XT-zqF" secondAttribute="trailing" constant="25" id="ENg-8G-PMU"/>
+                            <constraint firstItem="Hen-SW-UM1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Ff2-i0-beh"/>
+                            <constraint firstItem="QnV-GL-Jvf" firstAttribute="top" secondItem="Hen-SW-UM1" secondAttribute="bottom" constant="60" id="Opm-16-GGZ"/>
+                            <constraint firstItem="Hen-SW-UM1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="S64-rP-fP8"/>
+                            <constraint firstItem="Hen-SW-UM1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YXu-my-UC6"/>
+                            <constraint firstItem="Rhr-TS-TzG" firstAttribute="top" secondItem="Hen-SW-UM1" secondAttribute="bottom" constant="60" id="ZcY-Pb-hR2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hen-SW-UM1" secondAttribute="trailing" constant="50" id="pX2-Mo-jsq"/>
+                            <constraint firstItem="Rhr-TS-TzG" firstAttribute="leading" secondItem="QnV-GL-Jvf" secondAttribute="trailing" constant="25" id="q8G-wo-tQI"/>
+                            <constraint firstItem="WsC-XT-zqF" firstAttribute="top" secondItem="Hen-SW-UM1" secondAttribute="bottom" constant="60" id="y9M-uJ-fGO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -83,7 +82,7 @@
                         <outlet property="goBackBtn" destination="WsC-XT-zqF" id="qnb-aQ-jGj"/>
                         <outlet property="goFowardBtn" destination="Rhr-TS-TzG" id="YFN-cv-NeS"/>
                         <outlet property="imageView" destination="Hen-SW-UM1" id="nUu-wr-t9i"/>
-                        <segue destination="kqZ-Za-dUh" kind="show" identifier="result" id="zVd-sj-m1g"/>
+                        <segue destination="kqZ-Za-dUh" kind="showDetail" identifier="result" id="zVd-sj-m1g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
