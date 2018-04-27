@@ -11,48 +11,87 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    //イメージビューアーを接続
     
+    var imageCount = 0
     var image1 = UIImage(named: "image1")
     var image2 = UIImage(named: "image2")
     var image3 = UIImage(named: "image3")
+    var imageArray = ["image1.jpg", "image2.jpg", "image3.jpg"]
+    //画像を宣言
     
-  
-    
-    var flg = false
+    func viewImage() {
+        let myImage = UIImage(named: imageArray[imageCount])!
+        imageView.image = myImage
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         imageView.image = UIImage(named: "image1.jpg")
+        //1枚目の画像を表示しとく
         
         
     }
     @IBAction func goFoward(_ sender: Any?) {
-        if imageView.image == UIImage(named: "image1.jpg") {
-            
-        imageView.image = UIImage(named: "image2.jpg")
-
-        } else if imageView.image == UIImage(named: "image2.jpg") {
-            imageView.image = UIImage(named: "image3.jpg")
-        } else {
-            imageView.image = UIImage(named: "image1.jpg")
+        imageCount += 1
+        if imageCount >= 3 {
+            imageCount = 0
         }
-    
+        viewImage()
+//        //以下進むボタン
+//        if imageView.image == UIImage(named: "image1.jpg") {
+//
+//        imageView.image = UIImage(named: "image2.jpg")
+//
+//        } else if imageView.image == UIImage(named: "image2.jpg") {
+//            imageView.image = UIImage(named: "image3.jpg")
+//        } else {
+//            imageView.image = UIImage(named: "image1.jpg")
+//        }
     }
     
     @IBAction func goBack(_ sender: Any) {
-    
-    if imageView.image == UIImage(named: "image3.jpg") {
-    
-    imageView.image = UIImage(named: "image2.jpg")
-    
-    } else if imageView.image == UIImage(named: "image2.jpg") {
-    imageView.image = UIImage(named: "image1.jpg")
-    } else {
-    imageView.image = UIImage(named: "image3.jpg")
+        imageCount -= 1
+        if imageCount < 0 {
+            imageCount = 2
+        }
+        viewImage()
+    //以下戻るボタン
+//    if imageView.image == UIImage(named: "image3.jpg") {
+//
+//    imageView.image = UIImage(named: "image2.jpg")
+//
+//    } else if imageView.image == UIImage(named: "image2.jpg") {
+//    imageView.image = UIImage(named: "image1.jpg")
+//    } else {
+//    imageView.image = UIImage(named: "image3.jpg")
+//    }
+        
     }
+    
+    @IBAction func onTapImage(_ sender: Any) {
+        performSegue(withIdentifier: "result", sender: nil)
+        //画像タップで別ページに移動
     }
+    
+    //以下、２つ目と画面をつないだりデータ引き渡したり
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        
+        let detailViewController: DetailViewController = segue.destination as! DetailViewController
+
+
+        detailViewController.imageCount = imageCount
+
+    }
+    
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue){
+        //なにやら戻ってくるために必要なものらしい
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
