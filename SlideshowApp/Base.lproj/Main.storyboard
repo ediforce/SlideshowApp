@@ -55,6 +55,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="goBackBtn" destination="WsC-XT-zqF" id="qnb-aQ-jGj"/>
+                        <outlet property="goFowardBtn" destination="Rhr-TS-TzG" id="YFN-cv-NeS"/>
                         <outlet property="imageView" destination="Hen-SW-UM1" id="nUu-wr-t9i"/>
                         <segue destination="kqZ-Za-dUh" kind="show" identifier="result" id="zVd-sj-m1g"/>
                     </connections>

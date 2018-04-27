@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     //イメージビューアーを接続
+    @IBOutlet weak var goFowardBtn: UIButton!
+    @IBOutlet weak var goBackBtn: UIButton!
+    
     
     var imageCount = 0
     var image1 = UIImage(named: "image1")
@@ -61,9 +64,14 @@ class ViewController: UIViewController {
     @IBAction func Play(_ sender: Any) {
         if timer == nil {
             self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(goFoward), userInfo: nil, repeats: true)
+            goFowardBtn.isEnabled = false
+            goBackBtn.isEnabled = false
+            
         } else {
             self.timer.invalidate()
             self.timer = nil
+            goFowardBtn.isEnabled = true
+            goBackBtn.isEnabled = true
         }
     }
     
