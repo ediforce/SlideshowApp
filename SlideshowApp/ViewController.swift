@@ -18,9 +18,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     
     var imageCount = 0
-    var image1 = UIImage(named: "image1")
-    var image2 = UIImage(named: "image2")
-    var image3 = UIImage(named: "image3")
     var imageArray = ["image1.jpg", "image2.jpg", "image3.jpg","image4.jpg","image5.jpg","image6.jpg","image7.png"]
     //画像を宣言
     
@@ -109,13 +106,25 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
     }
     
+    @IBAction func jumpToList(_ sender: Any) {
+        performSegue(withIdentifier: "list", sender: nil)
+    }
+    
+    
     //以下、２つ目と画面をつないだりデータ引き渡したり
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
-        let detailViewController: DetailViewController = segue.destination as! DetailViewController
+        if segue.identifier == "result" {
+            let detailViewController: DetailViewController = segue.destination as! DetailViewController
+            detailViewController.imageCount = imageCount
+            
+//        } else if segue.identifier == "list" {
+//            let listViewController : ListViewController = segue.destination as! ListViewController
+//
+//
+        }
 
-
-        detailViewController.imageCount = imageCount
+        
 
     }
     
