@@ -78,7 +78,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             goFowardBtn.isEnabled = false
             goBackBtn.isEnabled = false
             audioPlayer.play()
-            imageView.isUserInteractionEnabled = false
+//            imageView.isUserInteractionEnabled = false
             
         } else {
             self.timer.invalidate()
@@ -86,7 +86,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             goFowardBtn.isEnabled = true
             goBackBtn.isEnabled = true
             audioPlayer.pause()
-            imageView.isUserInteractionEnabled = true
+//            imageView.isUserInteractionEnabled = true
         }
         
     }

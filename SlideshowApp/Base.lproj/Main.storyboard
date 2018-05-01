@@ -101,60 +101,19 @@
                                     <outletCollection property="gestureRecognizers" destination="gqG-zS-Gku" appends="YES" id="hgU-HP-ZXR"/>
                                 </connections>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucf-Lh-QEM">
-                                <rect key="frame" x="110" y="602" width="155" height="32"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sp-Lb-dOQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="35" height="32"/>
-                                        <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="20"/>
-                                        <state key="normal" title="▷   "/>
-                                        <connections>
-                                            <action selector="Play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HWE-k2-s0j"/>
-                                            <action selector="play:" destination="kqZ-Za-dUh" eventType="touchUpInside" id="VUI-0m-hff"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isB-wN-m6c">
-                                        <rect key="frame" x="35" y="0.0" width="60" height="32"/>
-                                        <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="20"/>
-                                        <state key="normal" title="＜＜　"/>
-                                        <connections>
-                                            <action selector="goBack:" destination="kqZ-Za-dUh" eventType="touchUpInside" id="3J8-P6-P9Z"/>
-                                            <action selector="goBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bxr-aJ-zr7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHb-ue-aQ1">
-                                        <rect key="frame" x="95" y="0.0" width="60" height="32"/>
-                                        <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="20"/>
-                                        <state key="normal" title="＞＞　"/>
-                                        <connections>
-                                            <action selector="goFoward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eon-rL-d0c"/>
-                                            <action selector="goFoward:" destination="kqZ-Za-dUh" eventType="touchUpInside" id="vdq-oc-SkL"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="155" id="2ZN-cw-wQG"/>
-                                    <constraint firstAttribute="height" constant="32" id="wj5-s6-fVe"/>
-                                </constraints>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UuT-Ls-esQ" firstAttribute="bottom" secondItem="ucf-Lh-QEM" secondAttribute="bottom" constant="33" id="1SR-XA-xRz"/>
                             <constraint firstItem="eZl-EC-u9T" firstAttribute="bottom" secondItem="UuT-Ls-esQ" secondAttribute="bottom" id="7rb-PY-6wG"/>
                             <constraint firstItem="eZl-EC-u9T" firstAttribute="top" secondItem="UuT-Ls-esQ" secondAttribute="top" constant="7" id="Ibx-bK-R4f"/>
                             <constraint firstItem="eZl-EC-u9T" firstAttribute="leading" secondItem="UuT-Ls-esQ" secondAttribute="leading" id="N6A-81-os4"/>
-                            <constraint firstItem="ucf-Lh-QEM" firstAttribute="centerX" secondItem="Sde-ti-XJp" secondAttribute="centerX" id="ZbG-XD-R7k"/>
                             <constraint firstItem="eZl-EC-u9T" firstAttribute="centerX" secondItem="Sde-ti-XJp" secondAttribute="centerX" id="iqB-Sk-hk7"/>
                             <constraint firstItem="eZl-EC-u9T" firstAttribute="trailing" secondItem="UuT-Ls-esQ" secondAttribute="trailing" id="u4v-d7-UWn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UuT-Ls-esQ"/>
                     </view>
                     <connections>
-                        <outlet property="goBackBtn" destination="isB-wN-m6c" id="mQQ-OW-TRQ"/>
-                        <outlet property="goFowardBtn" destination="uHb-ue-aQ1" id="iUA-t1-fIc"/>
                         <outlet property="imageView" destination="eZl-EC-u9T" id="wVw-7l-1Ni"/>
-                        <outlet property="playBtn" destination="0sp-Lb-dOQ" id="2MH-n4-MrY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wWW-xh-WEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
